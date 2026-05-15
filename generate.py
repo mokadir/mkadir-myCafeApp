@@ -1,5 +1,3 @@
-import os
-os.chdir("C:/Users/mskad/OneDrive/IT/~DevSecOpsAndPlatformEngineering/Projects/cafeApp/mycafeapp")
 D=chr(36)
 A=chr(38)
 html=f"""
