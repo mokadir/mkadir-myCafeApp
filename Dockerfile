@@ -1,30 +1,32 @@
 # =====================================================
-# Stage 1: Generate the static HTML using Python
+# Stage 1: Generate the static HTML + gather all assets
 # =====================================================
-FROM python:3.12-slim AS generator
+FROM python:3.12-slim AS builder
 
 WORKDIR /app
 
-# Copy the Python generator script
-COPY generate.py .
+# Copy the entire project context into the builder stage
+# (generate.py, css/, js/, img/, video/, fontawesome/)
+COPY . .
 
 # Run the generator to produce index.html
 RUN python generate.py
+
+# Show what we have
+RUN echo "Build artifacts:" && ls -la && echo "---" && ls -la css/ && echo "---" && ls -la js/
 
 # =====================================================
 # Stage 2: Serve the static site with Nginx
 # =====================================================
 FROM nginx:1.27-alpine
 
-# Copy the generated HTML from the previous stage
-COPY --from=generator /app/index.html /usr/share/nginx/html/index.html
-
-# Copy all static assets (CSS, JS, fonts, images, video)
-COPY css/          /usr/share/nginx/html/css/
-COPY js/           /usr/share/nginx/html/js/
-COPY img/          /usr/share/nginx/html/img/
-COPY video/        /usr/share/nginx/html/video/
-COPY fontawesome/  /usr/share/nginx/html/fontawesome/
+# Copy everything from the builder stage
+COPY --from=builder /app/index.html        /usr/share/nginx/html/index.html
+COPY --from=builder /app/css/              /usr/share/nginx/html/css/
+COPY --from=builder /app/js/               /usr/share/nginx/html/js/
+COPY --from=builder /app/img/              /usr/share/nginx/html/img/
+COPY --from=builder /app/video/            /usr/share/nginx/html/video/
+COPY --from=builder /app/fontawesome/      /usr/share/nginx/html/fontawesome/
 
 # Expose port 80
 EXPOSE 80
