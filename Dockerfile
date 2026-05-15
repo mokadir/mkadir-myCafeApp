@@ -12,9 +12,6 @@ COPY . .
 # Run the generator to produce index.html
 RUN python generate.py
 
-# Show what we have
-RUN echo "Build artifacts:" && ls -la && echo "---" && ls -la css/ && echo "---" && ls -la js/
-
 # =====================================================
 # Stage 2: Serve the static site with Nginx
 # =====================================================

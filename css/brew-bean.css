@@ -1,0 +1,336 @@
+/* ============================================
+   Brew & Bean - Specialty Coffee House
+   ============================================ */
+
+/* ---------- RESET & BASE ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #f5f0eb;
+  background: #1a1410;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+/* ---------- LAYOUT ---------- */
+.bb-container { position: relative; z-index: 2; }
+.bb-row { display: flex; min-height: 100vh; }
+
+/* ---------- SIDEBAR (LEFT) ---------- */
+.bb-left {
+  width: 280px;
+  flex-shrink: 0;
+  background: rgba(20, 14, 10, 0.92);
+  border-right: 1px solid rgba(245, 240, 235, 0.08);
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 10;
+  overflow-y: auto;
+}
+.bb-left-inner { display: flex; flex-direction: column; height: 100%; }
+.bb-site-header { text-align: center; margin-bottom: 40px; }
+.bb-site-logo { color: #c8a97e; margin-bottom: 12px; }
+.bb-site-name {
+  font-size: 1.8rem;
+  color: #c8a97e;
+  letter-spacing: 1px;
+}
+.bb-tagline {
+  font-size: 0.85rem;
+  color: rgba(245, 240, 235, 0.5);
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* ---------- NAVIGATION ---------- */
+.bb-site-nav { flex: 1; }
+.bb-site-nav-ul { display: flex; flex-direction: column; gap: 4px; }
+.bb-page-nav-item { width: 100%; }
+.bb-page-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(245, 240, 235, 0.6);
+  transition: all 0.2s;
+}
+.bb-page-link:hover { background: rgba(200, 169, 126, 0.1); color: #f5f0eb; }
+.bb-page-link.active { background: rgba(200, 169, 126, 0.15); color: #c8a97e; }
+.bb-page-link-icon { width: 20px; text-align: center; font-size: 1rem; }
+
+/* ---------- SIDEBAR FOOTER ---------- */
+.bb-sidebar-footer { margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(245, 240, 235, 0.06); text-align: center; }
+.bb-hours-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: rgba(245, 240, 235, 0.4); margin-bottom: 8px; }
+.bb-hours { font-size: 0.82rem; color: rgba(245, 240, 235, 0.6); line-height: 1.8; }
+.bb-social { display: flex; justify-content: center; gap: 12px; margin-top: 16px; }
+.bb-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(200, 169, 126, 0.1);
+  color: rgba(245, 240, 235, 0.5);
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.bb-social-link:hover { background: #c8a97e; color: #1a1410; }
+
+/* ---------- MAIN CONTENT (RIGHT) ---------- */
+.bb-right {
+  margin-left: 280px;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+.bb-main { padding: 40px 48px 20px; max-width: 960px; }
+
+/* ---------- PAGE CONTENT ---------- */
+.bb-page-content { display: none; }
+.bb-page-content:first-of-type { display: block; }
+
+/* ---------- BLACK BG CARD ---------- */
+.bb-black-bg {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(245, 240, 235, 0.06);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* ---------- MENU NAV (TABS) ---------- */
+.bb-menu-nav { margin-bottom: 24px; }
+.bb-menu-nav ul { display: flex; gap: 4px; flex-wrap: wrap; }
+.bb-menu-nav li { display: inline; }
+.bb-tab-link {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(245, 240, 235, 0.5);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.bb-tab-link:hover { color: #f5f0eb; background: rgba(200, 169, 126, 0.08); }
+.bb-tab-link.active { color: #c8a97e; background: rgba(200, 169, 126, 0.12); }
+
+/* ---------- TAB CONTENT ---------- */
+.bb-tab-content { display: none; }
+.bb-tab-content:first-of-type { display: block; }
+.bb-list { display: flex; flex-direction: column; gap: 16px; }
+
+/* ---------- LIST ITEM (MENU) ---------- */
+.bb-list-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(245, 240, 235, 0.05);
+  border-radius: 10px;
+  transition: border-color 0.2s;
+}
+.bb-list-item:hover { border-color: rgba(200, 169, 126, 0.2); }
+.bb-list-item-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.bb-list-item-img-big { width: 120px; height: 120px; }
+.bb-list-item-text { flex: 1; }
+.bb-list-item-text-2 { flex: 1; }
+.bb-list-item-text-2 p { margin-bottom: 10px; font-size: 0.9rem; color: rgba(245, 240, 235, 0.7); }
+.bb-list-item-name {
+  font-size: 1.05rem;
+  color: #f5f0eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.bb-list-item-price {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  color: #c8a97e;
+  font-size: 1rem;
+}
+.bb-list-item-description {
+  font-size: 0.82rem;
+  color: rgba(245, 240, 235, 0.55);
+  line-height: 1.5;
+}
+.bb-img-right { order: 1; }
+
+/* ---------- TEXT PRIMARY ---------- */
+.bb-text-primary { color: #c8a97e; }
+
+/* ---------- ABOUT ---------- */
+.bb-about-header { margin-bottom: 16px; }
+.bb-mb-20 { margin-bottom: 20px; }
+
+/* ---------- SECTION TITLE ---------- */
+.bb-section-title {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  padding: 16px 24px;
+  display: inline-block;
+}
+
+/* ---------- SPECIALS ---------- */
+.bb-special-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.bb-special-item { overflow: hidden; padding: 0; }
+.bb-special-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.bb-special-item-description { padding: 16px; }
+.bb-special-item-title { font-size: 1.1rem; margin-bottom: 8px; }
+.bb-special-item-text {
+  font-size: 0.85rem;
+  color: rgba(245, 240, 235, 0.6);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.bb-special-item-price {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  color: #c8a97e;
+  font-size: 1.1rem;
+}
+
+/* ---------- CONTACT ---------- */
+.bb-contact-text-container { margin-bottom: 20px; }
+.bb-contact-text-container h2 { margin-bottom: 12px; }
+.bb-contact-text-container p { font-size: 0.9rem; color: rgba(245, 240, 235, 0.7); margin-bottom: 14px; line-height: 1.7; }
+.bb-contact-info p { font-size: 0.88rem; margin-bottom: 8px; color: rgba(245, 240, 235, 0.65); }
+.bb-contact-info i { width: 22px; color: #c8a97e; margin-right: 6px; }
+
+/* ---------- FORM ---------- */
+.bb-form-group { margin-bottom: 14px; }
+.bb-mb-30 { margin-bottom: 30px; }
+.bb-form-control {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(245, 240, 235, 0.1);
+  border-radius: 8px;
+  color: #f5f0eb;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.bb-form-control:focus { border-color: #c8a97e; }
+.bb-form-control::placeholder { color: rgba(245, 240, 235, 0.3); }
+textarea.bb-form-control { resize: vertical; min-height: 100px; }
+
+/* ---------- BUTTON ---------- */
+.bb-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #c8a97e;
+  color: #1a1410;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.bb-btn-primary:hover { background: #d4b98f; transform: translateY(-1px); }
+.bb-align-right { display: flex; justify-content: flex-end; }
+
+/* ---------- FOOTER ---------- */
+.bb-site-footer { padding: 0 48px 24px; }
+.bb-footer-text {
+  font-size: 0.78rem;
+  color: rgba(245, 240, 235, 0.35);
+  text-align: center;
+  padding: 16px;
+}
+
+/* ---------- VIDEO BACKGROUND ---------- */
+.bb-video-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+#bb-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  opacity: 0.08;
+}
+#bb-video-control-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 20;
+  color: rgba(245, 240, 235, 0.3);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 10px;
+}
+#bb-video-control-button:hover { color: #c8a97e; }
+
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1a1410; }
+::-webkit-scrollbar-thumb { background: rgba(200, 169, 126, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(200, 169, 126, 0.5); }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 991px) {
+  .bb-left {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(245, 240, 235, 0.08);
+    padding: 20px;
+  }
+  .bb-right { margin-left: 0; }
+  .bb-main { padding: 24px 20px; }
+  .bb-site-nav-ul { flex-direction: row; flex-wrap: wrap; gap: 2px; }
+  .bb-page-link { padding: 8px 14px; font-size: 0.85rem; }
+  .bb-site-footer { padding: 0 20px 16px; }
+  .bb-special-items { grid-template-columns: 1fr; }
+  .bb-list-item { flex-direction: column; }
+  .bb-list-item-img { width: 100%; height: 160px; }
+  .bb-list-item-img-big { width: 100%; height: 200px; }
+}
