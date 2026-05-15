@@ -9,7 +9,10 @@ html=f"""
     <title>Brew {A}amp; Bean - Specialty Coffee House</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700{A}family=Raleway:wght@300;400;600{A}display=swap" rel="stylesheet">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="css/brew-bean.css">
+        <link rel="stylesheet" href="css/brew-bean.css">
+    <script>
+      (function(){{var t=localStorage.getItem("bb-theme");if(t){{document.documentElement.setAttribute("data-theme",t);}}else if(window.matchMedia("(prefers-color-scheme: light)").matches){{document.documentElement.setAttribute("data-theme","light");}}}})();
+    </script>
 </head>
 <body>
   <div class="bb-container">
@@ -21,6 +24,10 @@ html=f"""
             <h1 class="bb-site-name">Brew {A}amp; Bean</h1>
             <p class="bb-tagline">Crafted with Passion</p>
           </div>
+          <button class="bb-theme-toggle" id="bb-theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon" id="bb-theme-icon"></i>
+            <span id="bb-theme-label">Dark Mode</span>
+          </button>
           <nav class="bb-site-nav">
             <ul class="bb-site-nav-ul">
               <li class="bb-page-nav-item">
@@ -63,12 +70,12 @@ html=f"""
       <div class="bb-right">
         <main class="bb-main">
           <div id="menu" class="bb-page-content">
-            <nav class="bb-black-bg bb-menu-nav">
+                        <nav class="bb-black-bg bb-menu-nav">
               <ul>
-                <li><a href="#" class="bb-tab-link active" data-id="cold">Iced Coffee</a></li>
-                <li><a href="#" class="bb-tab-link" data-id="hot">Hot Coffee</a></li>
-                <li><a href="#" class="bb-tab-link" data-id="juice">Smoothies</a></li>
-                <li><a href="#" class="bb-tab-link" data-id="pastry">Pastries</a></li>
+                <li><a href="#menu" class="bb-tab-link active" data-tab="cold">Iced Coffee</a></li>
+                <li><a href="#menu" class="bb-tab-link" data-tab="hot">Hot Coffee</a></li>
+                <li><a href="#menu" class="bb-tab-link" data-tab="juice">Smoothies</a></li>
+                <li><a href="#menu" class="bb-tab-link" data-tab="pastry">Pastries</a></li>
               </ul>
             </nav>
             <div id="cold" class="bb-tab-content"><div class="bb-list">
@@ -314,7 +321,8 @@ html=f"""
       </video>
   </div>
   <script src="js/jquery-3.4.1.min.js"></script>
-  <script>
+    <script>
+    var BB_TABS={{cold:"Iced Coffee",hot:"Hot Coffee",juice:"Smoothies",pastry:"Pastries"}};
     function setVideoSize(){{
       var vidWidth=1920;var vidHeight=1080;
       var ww=window.innerWidth;var wh=window.innerHeight;
@@ -324,34 +332,57 @@ html=f"""
       var nh=tempVidHeight>wh?tempVidHeight:wh;
       var v=jQuery;v("#bb-video").css("width",nw).css("height",nh);
     }}
-    function openTab(e,i){{
+    function getTabFromHash(){{
+      var h=location.hash;
+      if(h.indexOf(",")>-1){{var p=h.split(",");return p[1];}}
+      return null;
+    }}
+    function openTab(tabId,el){{
+      if(!tabId)return;
       jQuery(".bb-tab-content").hide();
-      jQuery("#"+i).show();
+      jQuery("#"+tabId).show();
       jQuery(".bb-tab-link").removeClass("active");
-      jQuery(e.currentTarget).addClass("active");
+      if(el){{jQuery(el).addClass("active");}}
+      else{{jQuery('.bb-tab-link[data-tab="'+tabId+'"]').addClass("active");}}
     }}
     function initPage(){{
-      var p=location.hash;
-      if(p){{highlightMenu(jQuery(".bb-page-link[href^=""{D}{{p}}""]"));showPage(jQuery(p));}}
-      else{{p=jQuery(".bb-page-link.active").attr("href");showPage(jQuery(p));}}
+      var h=location.hash,tab=getTabFromHash();
+      if(h){{var pagePart=h.split(",")[0];highlightMenu(jQuery('.bb-page-link[href^="'+pagePart+'"]'));showPage(jQuery(pagePart));}}
+      else{{h=jQuery(".bb-page-link.active").attr("href");showPage(jQuery(h));}}
+      if(tab){{openTab(tab,null);}}
+    }}
+    function updateHash(page,tab){{
+      if(history.pushState){{
+        var h=page;if(tab)h+=","+tab;
+        history.pushState(null,null,h);
+      }}
     }}
     function highlightMenu(m){{
       jQuery(".bb-page-link").removeClass("active");m.addClass("active");
     }}
     function showPage(p){{
       jQuery(".bb-page-content").hide();p.show();
+      var tab=getTabFromHash();
+      if(p.is("#menu")&&tab){{openTab(tab,null);}}
+      else if(p.is("#menu")){{jQuery(".bb-tab-link.active").click();}}
     }}
     jQuery(document).ready(function(){{
       initPage();
       jQuery(".bb-page-link").click(function(e){{
         if(window.innerWidth>991){{e.preventDefault();}}
-        highlightMenu(jQuery(e.currentTarget));showPage(jQuery(e.currentTarget.hash));
+        var page=jQuery(e.currentTarget.hash.split(",")[0]);
+        highlightMenu(jQuery(e.currentTarget));showPage(page);
+        updateHash(e.currentTarget.hash.split(",")[0],getTabFromHash());
       }});
       jQuery(".bb-tab-link").on("click",function(e){{
-        e.preventDefault();openTab(e,jQuery(e.target).data("id"));
+        e.preventDefault();
+        var tabId=jQuery(this).data("tab");
+        openTab(tabId,this);
+        updateHash("#menu",tabId);
       }});
       jQuery(".bb-tab-link.active").click();
       setVideoSize();
+      jQuery(window).on("hashchange",function(){{initPage();}});
       var t;window.onresize=function(){{clearTimeout(t);t=setTimeout(setVideoSize,100);}};
       var b=jQuery("#bb-video-control-button");
       b.on("click",function(e){{
@@ -362,7 +393,20 @@ html=f"""
       jQuery("#contact-form").on("submit",function(e){{
         e.preventDefault();alert("Thank you for reaching out! We will get back to you soon.");this.reset();
       }});
-    }});
+      function setTheme(t){{
+        var r=document.documentElement,i=jQuery("#bb-theme-icon"),l=jQuery("#bb-theme-label");
+        r.setAttribute("data-theme",t);localStorage.setItem("bb-theme",t);
+        if(t==="light"){{i.removeClass("fa-moon").addClass("fa-sun");l.text("Light Mode");}}
+        else{{i.removeClass("fa-sun").addClass("fa-moon");l.text("Dark Mode");}}
+      }}
+      jQuery("#bb-theme-toggle").on("click",function(){{
+        var c=document.documentElement.getAttribute("data-theme");
+        setTheme(c==="light"?"dark":"light");
+      }});
+      (function(){{
+        var t=localStorage.getItem("bb-theme")||(window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");
+        setTheme(t);
+      }})();
   </script>
 </body>
 </html>
