@@ -148,9 +148,31 @@ html=f"""
                   <img src="img/hot-flat-white.png" alt="Flat White" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
                     <h3 class="bb-list-item-name">Flat White<span class="bb-list-item-price">{D}4.75</span></h3>
-                    <p class="bb-list-item-description">Double ristretto poured over silky microfoam. A velvety smooth Australian classic.</p>
+                                        <p class="bb-list-item-description">Double ristretto poured over silky microfoam. A velvety smooth Australian classic.</p>
+                  </div>
+                </div>
+                <div class="bb-list-item">
+                  <img src="img/hot-cortado.png" alt="Cortado" class="bb-list-item-img">
+                  <div class="bb-black-bg bb-list-item-text">
+                    <h3 class="bb-list-item-name">Cortado<span class="bb-list-item-price">{D}4.25</span></h3>
+                    <p class="bb-list-item-description">Equal parts espresso and warm milk, served in a small glass. A Spanish classic with a bold bite.</p>
+                  </div>
+                </div>
+                <div class="bb-list-item">
+                  <img src="img/hot-macchiato.png" alt="Macchiato" class="bb-list-item-img">
+                  <div class="bb-black-bg bb-list-item-text">
+                    <h3 class="bb-list-item-name">Espresso Macchiato<span class="bb-list-item-price">{D}3.50</span></h3>
+                    <p class="bb-list-item-description">Single espresso marked with a dollop of steamed milk foam. Short, strong, and perfectly balanced.</p>
+                  </div>
+                </div>
+                <div class="bb-list-item">
+                  <img src="img/hot-turkish.png" alt="Turkish Coffee" class="bb-list-item-img">
+                  <div class="bb-black-bg bb-list-item-text">
+                    <h3 class="bb-list-item-name">Turkish Coffee<span class="bb-list-item-price">{D}4.00</span></h3>
+                    <p class="bb-list-item-description">Finely ground beans brewed in a traditional cezve with cardamom. Rich, unfiltered, and aromatic.</p>
+                  </div>
+                </div>
               </div></div>
-        </div></div>
                 <div class="bb-list-item">
                   <img src="img/smoothie-1.png" alt="Strawberry Smoothie" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
@@ -190,9 +212,24 @@ html=f"""
                   <img src="img/smoothie-6.png" alt="Protein Smoothie" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
                     <h3 class="bb-list-item-name">Protein Power<span class="bb-list-item-price">{D}7.50</span></h3>
-                    <p class="bb-list-item-description">Banana, peanut butter, chocolate protein, and oat milk. Fuel for your day.</p>
+                                        <p class="bb-list-item-description">Banana, peanut butter, chocolate protein, and oat milk. Fuel for your day.</p>
+                  </div>
+                </div>
+                <div class="bb-list-item">
+                  <img src="img/smoothie-7.png" alt="Acai Smoothie" class="bb-list-item-img">
+                  <div class="bb-black-bg bb-list-item-text">
+                    <h3 class="bb-list-item-name">Acai Antioxidant<span class="bb-list-item-price">{D}7.50</span></h3>
+                    <p class="bb-list-item-description">Acai berries blended with banana, blueberries, and coconut water. A superfood powerhouse.</p>
+                  </div>
+                </div>
+                <div class="bb-list-item">
+                  <img src="img/smoothie-8.png" alt="Coffee Smoothie" class="bb-list-item-img">
+                  <div class="bb-black-bg bb-list-item-text">
+                    <h3 class="bb-list-item-name">Coffee Kick<span class="bb-list-item-price">{D}7.25</span></h3>
+                    <p class="bb-list-item-description">Cold brew blended with banana, dates, almond milk, and a dash of cinnamon. Energy in a glass.</p>
+                  </div>
+                </div>
               </div></div>
-        </div></div>
                 <div class="bb-list-item">
                   <img src="img/special-01.jpg" alt="Croissant" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
@@ -232,10 +269,30 @@ html=f"""
                   <img src="img/special-06.jpg" alt="Brownie" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
                     <h3 class="bb-list-item-name">Double Fudge Brownie<span class="bb-list-item-price">{D}4.50</span></h3>
-                    <p class="bb-list-item-description">Dense, fudgy Belgian chocolate brownie with chocolate chunks. A decadent treat.</p>
+                                        <p class="bb-list-item-description">Dense, fudgy Belgian chocolate brownie with chocolate chunks. A decadent treat.</p>
               </div></div>
-          </div>
-          <div class="bb-copyright-bar">{A}copy; 2026 Brew {A}amp; Bean Coffee House. All rights reserved.</div>
+                <div class="bb-list-item">
+                  <img src="img/special-07.jpg" alt="Lemon Tart" class="bb-list-item-img">
+                  <div class="bb-black-bg bb-list-item-text">
+                    <h3 class="bb-list-item-name">Lemon Tart<span class="bb-list-item-price">{D}5.00</span></h3>
+                    <p class="bb-list-item-description">Zesty lemon curd in a buttery pastry shell, topped with toasted meringue. Bright and refreshing.</p>
+                  </div>
+                </div>
+                <div class="bb-list-item">
+                  <img src="img/special-08.jpg" alt="Scone" class="bb-list-item-img">
+                  <div class="bb-black-bg bb-list-item-text">
+                    <h3 class="bb-list-item-name">Cranberry Orange Scone<span class="bb-list-item-price">{D}3.75</span></h3>
+                    <p class="bb-list-item-description">Tender buttermilk scone with dried cranberries and fresh orange zest. Pairs perfectly with any brew.</p>
+                  </div>
+                </div>
+                <div class="bb-list-item">
+                  <img src="img/special-09.jpg" alt="Cheesecake" class="bb-list-item-img">
+                  <div class="bb-black-bg bb-list-item-text">
+                    <h3 class="bb-list-item-name">New York Cheesecake<span class="bb-list-item-price">{D}6.00</span></h3>
+                    <p class="bb-list-item-description">Creamy, dense cheesecake on a graham cracker crust, finished with a berry compote.</p>
+                  </div>
+                </div>
+                            </div></div>
           </div>
           <div id="about" class="bb-page-content">
             <div class="bb-black-bg bb-mb-20 bb-about-box-1">
@@ -256,9 +313,50 @@ html=f"""
                   <p><strong>Community:</strong> We host local artists, musicians, and events to support our neighborhood.</p>
                 </div>
                 <img src="img/about-2.png" alt="Our values" class="bb-list-item-img bb-list-item-img-big bb-img-right">
-              </div></div>
-          </div>
-          <div class="bb-copyright-bar">{A}copy; 2026 Brew {A}amp; Bean Coffee House. All rights reserved.</div>
+                                                        </div></div>
+            <div class="bb-black-bg bb-mb-20">
+              <h2 class="bb-text-primary bb-about-header">Meet the Team</h2>
+              <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:12px;">
+                <div style="flex:1;min-width:140px;text-align:center;padding:16px;background:var(--bg-elevated);border-radius:8px;">
+                  <i class="fas fa-user-circle" style="font-size:2.5rem;color:var(--accent);margin-bottom:8px;"></i>
+                  <h3 style="font-size:0.95rem;color:var(--text-primary);margin-bottom:4px;">Elena Rossi</h3>
+                  <p style="font-size:0.8rem;color:var(--text-muted);">Head Barista &amp; Roast Master</p>
+                  <p style="font-size:0.78rem;color:var(--text-dim);margin-top:6px;">10 years crafting the perfect pour</p>
+                </div>
+                <div style="flex:1;min-width:140px;text-align:center;padding:16px;background:var(--bg-elevated);border-radius:8px;">
+                  <i class="fas fa-user-circle" style="font-size:2.5rem;color:var(--accent);margin-bottom:8px;"></i>
+                  <h3 style="font-size:0.95rem;color:var(--text-primary);margin-bottom:4px;">Marcus Chen</h3>
+                  <p style="font-size:0.8rem;color:var(--text-muted);">Pastry Chef</p>
+                  <p style="font-size:0.78rem;color:var(--text-dim);margin-top:6px;">Artisan baking since 2012</p>
+                </div>
+                <div style="flex:1;min-width:140px;text-align:center;padding:16px;background:var(--bg-elevated);border-radius:8px;">
+                  <i class="fas fa-user-circle" style="font-size:2.5rem;color:var(--accent);margin-bottom:8px;"></i>
+                  <h3 style="font-size:0.95rem;color:var(--text-primary);margin-bottom:4px;">Aisha Patel</h3>
+                  <p style="font-size:0.8rem;color:var(--text-muted);">Coffee Sourcer &amp; Sustainability Lead</p>
+                  <p style="font-size:0.78rem;color:var(--text-dim);margin-top:6px;">Direct trade partnerships worldwide</p>
+                </div>
+              </div>
+            </div>
+            <div class="bb-black-bg">
+              <h2 class="bb-text-primary bb-about-header">Our Process</h2>
+              <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;">
+                <div style="flex:1;min-width:160px;padding:12px;background:var(--bg-elevated);border-radius:8px;">
+                  <i class="fas fa-seedling" style="color:var(--accent);margin-right:8px;"></i>
+                  <strong style="font-size:0.85rem;">Sourced</strong>
+                  <p style="font-size:0.78rem;color:var(--text-muted);margin-top:4px;">Ethically farmed beans from small family growers</p>
+                </div>
+                <div style="flex:1;min-width:160px;padding:12px;background:var(--bg-elevated);border-radius:8px;">
+                  <i class="fas fa-fire" style="color:var(--accent);margin-right:8px;"></i>
+                  <strong style="font-size:0.85rem;">Roasted</strong>
+                  <p style="font-size:0.78rem;color:var(--text-muted);margin-top:4px;">Small-batch roasted to highlight each bean profile</p>
+                </div>
+                <div style="flex:1;min-width:160px;padding:12px;background:var(--bg-elevated);border-radius:8px;">
+                  <i class="fas fa-mug-hot" style="color:var(--accent);margin-right:8px;"></i>
+                  <strong style="font-size:0.85rem;">Brewed</strong>
+                  <p style="font-size:0.78rem;color:var(--text-muted);margin-top:4px;">Expertly crafted by our skilled baristas</p>
+                </div>
+              </div>
+            </div>
           </div>
           <div id="special" class="bb-page-content">
             <h2 class="bb-section-title bb-black-bg">Chef Specials</h2>
@@ -311,7 +409,7 @@ html=f"""
                   <span class="bb-special-item-price">{D}5.75</span>
                 </div></div>
           </div>
-          <div class="bb-copyright-bar">{A}copy; 2026 Brew {A}amp; Bean Coffee House. All rights reserved.</div>
+          
           </div>
           <div id="contact" class="bb-page-content">
             <div class="bb-black-bg bb-contact-text-container">
@@ -344,7 +442,6 @@ html=f"""
                 </div>
                             </form>
             </div>
-          <div class="bb-copyright-bar">{A}copy; 2026 Brew {A}amp; Bean Coffee House. All rights reserved.</div>
           </div>
         </main>
         <footer class="bb-site-footer">
