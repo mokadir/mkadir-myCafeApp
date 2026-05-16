@@ -19,7 +19,7 @@ spec:
         - name: dockerhub-cred
       containers:
         - name: cafeapp-container
-          image: mokadir/cafeapp:5
+          image: mokadir/cafeapp:6
           ports:
             - containerPort: 80
           resources:

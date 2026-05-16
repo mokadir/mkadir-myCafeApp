@@ -366,13 +366,20 @@ html=f"""
       if(p.is("#menu")&&tab){{openTab(tab,null);}}
       else if(p.is("#menu")){{jQuery(".bb-tab-link.active").click();}}
     }}
+    function setTheme(t){{
+      var r=document.documentElement,i=jQuery("#bb-theme-icon"),l=jQuery("#bb-theme-label");
+      r.setAttribute("data-theme",t);localStorage.setItem("bb-theme",t);
+      if(t==="light"){{i.removeClass("fa-moon").addClass("fa-sun");l.text("Light Mode");}}
+      else{{i.removeClass("fa-sun").addClass("fa-moon");l.text("Dark Mode");}}
+    }}
     jQuery(document).ready(function(){{
       initPage();
       jQuery(".bb-page-link").click(function(e){{
-        if(window.innerWidth>991){{e.preventDefault();}}
+        e.preventDefault();
         var page=jQuery(e.currentTarget.hash.split(",")[0]);
         highlightMenu(jQuery(e.currentTarget));showPage(page);
-        updateHash(e.currentTarget.hash.split(",")[0],getTabFromHash());
+        updateHash(e.currentTarget.hash.split(",")[0],null);
+        if(window.innerWidth<=991){{var s=document.getElementById(page.replace("#",""));if(s){{s.scrollIntoView({{behavior:"smooth"}});}}}}
       }});
       jQuery(".bb-tab-link").on("click",function(e){{
         e.preventDefault();
@@ -393,12 +400,6 @@ html=f"""
       jQuery("#contact-form").on("submit",function(e){{
         e.preventDefault();alert("Thank you for reaching out! We will get back to you soon.");this.reset();
       }});
-      function setTheme(t){{
-        var r=document.documentElement,i=jQuery("#bb-theme-icon"),l=jQuery("#bb-theme-label");
-        r.setAttribute("data-theme",t);localStorage.setItem("bb-theme",t);
-        if(t==="light"){{i.removeClass("fa-moon").addClass("fa-sun");l.text("Light Mode");}}
-        else{{i.removeClass("fa-sun").addClass("fa-moon");l.text("Dark Mode");}}
-      }}
       jQuery("#bb-theme-toggle").on("click",function(){{
         var c=document.documentElement.getAttribute("data-theme");
         setTheme(c==="light"?"dark":"light");
@@ -407,6 +408,7 @@ html=f"""
         var t=localStorage.getItem("bb-theme")||(window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");
         setTheme(t);
       }})();
+    }});
   </script>
 </body>
 </html>
