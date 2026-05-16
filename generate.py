@@ -77,10 +77,7 @@ html=f"""
                 <li><a href="#menu" class="bb-tab-link" data-tab="pastry">Pastries</a></li>
               </ul>
             </nav>
-            <div id="cold" class="bb-tab-content"><div class="bb-list">
-            <div id="hot" class="bb-tab-content"><div class="bb-list">
-            <div id="juice" class="bb-tab-content"><div class="bb-list">
-            <div id="pastry" class="bb-tab-content"><div class="bb-list">
+                        <div id="cold" class="bb-tab-content"><div class="bb-list">
                 <div class="bb-list-item">
                   <img src="img/iced-americano.png" alt="Iced Americano" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
@@ -107,8 +104,10 @@ html=f"""
                   <div class="bb-black-bg bb-list-item-text">
                     <h3 class="bb-list-item-name">Iced Latte<span class="bb-list-item-price">{D}5.50</span></h3>
                     <p class="bb-list-item-description">Espresso combined with chilled milk and ice. Silky smooth and perfectly balanced.</p>
-              </div></div>
-        </div></div>
+                  </div>
+                </div>
+            </div></div>
+            <div id="hot" class="bb-tab-content"><div class="bb-list">
                 <div class="bb-list-item">
                   <img src="img/hot-americano.png" alt="Hot Americano" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
@@ -148,7 +147,7 @@ html=f"""
                   <img src="img/hot-flat-white.png" alt="Flat White" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
                     <h3 class="bb-list-item-name">Flat White<span class="bb-list-item-price">{D}4.75</span></h3>
-                                        <p class="bb-list-item-description">Double ristretto poured over silky microfoam. A velvety smooth Australian classic.</p>
+                    <p class="bb-list-item-description">Double ristretto poured over silky microfoam. A velvety smooth Australian classic.</p>
                   </div>
                 </div>
                 <div class="bb-list-item">
@@ -172,7 +171,8 @@ html=f"""
                     <p class="bb-list-item-description">Finely ground beans brewed in a traditional cezve with cardamom. Rich, unfiltered, and aromatic.</p>
                   </div>
                 </div>
-              </div></div>
+            </div></div>
+            <div id="juice" class="bb-tab-content"><div class="bb-list">
                 <div class="bb-list-item">
                   <img src="img/smoothie-1.png" alt="Strawberry Smoothie" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
@@ -212,7 +212,7 @@ html=f"""
                   <img src="img/smoothie-6.png" alt="Protein Smoothie" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
                     <h3 class="bb-list-item-name">Protein Power<span class="bb-list-item-price">{D}7.50</span></h3>
-                                        <p class="bb-list-item-description">Banana, peanut butter, chocolate protein, and oat milk. Fuel for your day.</p>
+                    <p class="bb-list-item-description">Banana, peanut butter, chocolate protein, and oat milk. Fuel for your day.</p>
                   </div>
                 </div>
                 <div class="bb-list-item">
@@ -229,7 +229,8 @@ html=f"""
                     <p class="bb-list-item-description">Cold brew blended with banana, dates, almond milk, and a dash of cinnamon. Energy in a glass.</p>
                   </div>
                 </div>
-              </div></div>
+            </div></div>
+            <div id="pastry" class="bb-tab-content"><div class="bb-list">
                 <div class="bb-list-item">
                   <img src="img/special-01.jpg" alt="Croissant" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
@@ -269,8 +270,9 @@ html=f"""
                   <img src="img/special-06.jpg" alt="Brownie" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
                     <h3 class="bb-list-item-name">Double Fudge Brownie<span class="bb-list-item-price">{D}4.50</span></h3>
-                                        <p class="bb-list-item-description">Dense, fudgy Belgian chocolate brownie with chocolate chunks. A decadent treat.</p>
-              </div></div>
+                    <p class="bb-list-item-description">Dense, fudgy Belgian chocolate brownie with chocolate chunks. A decadent treat.</p>
+                  </div>
+                </div>
                 <div class="bb-list-item">
                   <img src="img/special-07.jpg" alt="Lemon Tart" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
@@ -292,7 +294,7 @@ html=f"""
                     <p class="bb-list-item-description">Creamy, dense cheesecake on a graham cracker crust, finished with a berry compote.</p>
                   </div>
                 </div>
-                            </div></div>
+            </div></div>
           </div>
           <div id="about" class="bb-page-content">
             <div class="bb-black-bg bb-mb-20 bb-about-box-1">
