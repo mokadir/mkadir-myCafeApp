@@ -422,20 +422,22 @@
               </div>
             </div>
             <div class="bb-black-bg bb-contact-form-container bb-align-right">
-              <form action="" method="POST" id="contact-form">
-                <div class="bb-form-group">
-                  <input type="text" name="name" class="bb-form-control" placeholder="Your Name" required />
-                </div>
-                <div class="bb-form-group">
-                  <input type="email" name="email" class="bb-form-control" placeholder="Your Email" required />
-                </div>
-                <div class="bb-form-group">
-                  <input type="text" name="subject" class="bb-form-control" placeholder="Subject" />
-                </div>
-                <div class="bb-form-group bb-mb-30">
-                  <textarea rows="5" name="message" class="bb-form-control" placeholder="Your Message" required></textarea>
-                </div>
-                <div>
+                            <form action="" method="POST" id="contact-form">
+                              <div style="display:flex;flex-wrap:wrap;gap:16px;">
+                                <div class="bb-form-group" style="flex:1;min-width:180px;">
+                                  <input type="text" name="name" class="bb-form-control" placeholder="Your Name" required />
+                                </div>
+                                <div class="bb-form-group" style="flex:1;min-width:180px;">
+                                  <input type="email" name="email" class="bb-form-control" placeholder="Your Email" required />
+                                </div>
+                              </div>
+                              <div class="bb-form-group">
+                                <textarea rows="5" name="message" class="bb-form-control" placeholder="Your Message" required></textarea>
+                              </div>
+                              <div class="bb-form-group">
+                                <input type="text" name="subject" class="bb-form-control" placeholder="Subject" />
+                              </div>
+                              <div>
                   <button type="submit" class="bb-btn-primary bb-align-right">
                     Send Message <i class="fas fa-paper-plane"></i>
                   </button>
