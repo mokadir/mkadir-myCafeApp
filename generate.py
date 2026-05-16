@@ -63,8 +63,7 @@ html=f"""
               <a href="#" class="bb-social-link"><i class="fab fa-facebook-f"></i></a>
               <a href="#" class="bb-social-link"><i class="fab fa-instagram"></i></a>
               <a href="#" class="bb-social-link"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
+                        </div></div>
         </div>
       </div>
       <div class="bb-right">
@@ -108,9 +107,8 @@ html=f"""
                   <div class="bb-black-bg bb-list-item-text">
                     <h3 class="bb-list-item-name">Iced Latte<span class="bb-list-item-price">{D}5.50</span></h3>
                     <p class="bb-list-item-description">Espresso combined with chilled milk and ice. Silky smooth and perfectly balanced.</p>
-                  </div>
-                </div>
               </div></div>
+        </div></div>
                 <div class="bb-list-item">
                   <img src="img/hot-americano.png" alt="Hot Americano" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
@@ -139,7 +137,20 @@ html=f"""
                     <p class="bb-list-item-description">Espresso with steamed milk and a light layer of foam. Our most popular hot beverage.</p>
                   </div>
                 </div>
+                <div class="bb-list-item">
+                  <img src="img/hot-mocha.png" alt="Hot Mocha" class="bb-list-item-img">
+                  <div class="bb-black-bg bb-list-item-text">
+                    <h3 class="bb-list-item-name">Hot Mocha<span class="bb-list-item-price">{D}5.25</span></h3>
+                    <p class="bb-list-item-description">Rich chocolate ganache meets our double espresso, topped with steamed milk and a dusting of cocoa.</p>
+                  </div>
+                </div>
+                <div class="bb-list-item">
+                  <img src="img/hot-flat-white.png" alt="Flat White" class="bb-list-item-img">
+                  <div class="bb-black-bg bb-list-item-text">
+                    <h3 class="bb-list-item-name">Flat White<span class="bb-list-item-price">{D}4.75</span></h3>
+                    <p class="bb-list-item-description">Double ristretto poured over silky microfoam. A velvety smooth Australian classic.</p>
               </div></div>
+        </div></div>
                 <div class="bb-list-item">
                   <img src="img/smoothie-1.png" alt="Strawberry Smoothie" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
@@ -168,7 +179,20 @@ html=f"""
                     <p class="bb-list-item-description">Spinach, kale, apple, ginger, and lemon. A nutritious powerhouse to start your day.</p>
                   </div>
                 </div>
+                <div class="bb-list-item">
+                  <img src="img/smoothie-5.png" alt="Mango Smoothie" class="bb-list-item-img">
+                  <div class="bb-black-bg bb-list-item-text">
+                    <h3 class="bb-list-item-name">Mango Tango<span class="bb-list-item-price">{D}6.75</span></h3>
+                    <p class="bb-list-item-description">Ripe mangoes blended with coconut cream and a squeeze of lime. Pure tropical sunshine.</p>
+                  </div>
+                </div>
+                <div class="bb-list-item">
+                  <img src="img/smoothie-6.png" alt="Protein Smoothie" class="bb-list-item-img">
+                  <div class="bb-black-bg bb-list-item-text">
+                    <h3 class="bb-list-item-name">Protein Power<span class="bb-list-item-price">{D}7.50</span></h3>
+                    <p class="bb-list-item-description">Banana, peanut butter, chocolate protein, and oat milk. Fuel for your day.</p>
               </div></div>
+        </div></div>
                 <div class="bb-list-item">
                   <img src="img/special-01.jpg" alt="Croissant" class="bb-list-item-img">
                   <div class="bb-black-bg bb-list-item-text">
@@ -197,7 +221,21 @@ html=f"""
                     <p class="bb-list-item-description">Soft, pillowy dough swirled with cinnamon sugar and topped with cream cheese icing.</p>
                   </div>
                 </div>
+                <div class="bb-list-item">
+                  <img src="img/special-05.jpg" alt="Banana Bread" class="bb-list-item-img">
+                  <div class="bb-black-bg bb-list-item-text">
+                    <h3 class="bb-list-item-name">Banana Walnut Bread<span class="bb-list-item-price">{D}4.00</span></h3>
+                    <p class="bb-list-item-description">Moist banana bread studded with toasted walnuts and finished with a honey drizzle.</p>
+                  </div>
+                </div>
+                <div class="bb-list-item">
+                  <img src="img/special-06.jpg" alt="Brownie" class="bb-list-item-img">
+                  <div class="bb-black-bg bb-list-item-text">
+                    <h3 class="bb-list-item-name">Double Fudge Brownie<span class="bb-list-item-price">{D}4.50</span></h3>
+                    <p class="bb-list-item-description">Dense, fudgy Belgian chocolate brownie with chocolate chunks. A decadent treat.</p>
               </div></div>
+          </div>
+          <div class="bb-copyright-bar">{A}copy; 2026 Brew {A}amp; Bean Coffee House. All rights reserved.</div>
           </div>
           <div id="about" class="bb-page-content">
             <div class="bb-black-bg bb-mb-20 bb-about-box-1">
@@ -207,9 +245,8 @@ html=f"""
                 <div class="bb-list-item-text-2">
                   <p>Brew {A}amp; Bean was born from a simple belief: that great coffee has the power to bring people together. Founded in 2015, we source the finest beans from sustainable farms around the world.</p>
                   <p>Every cup we serve is roasted in-house and crafted with care. We are not just a coffee shop - we are a community space where stories are shared and connections are made.</p>
-                </div>
-              </div>
-            </div>
+                                </div></div>
+          </div>
             <div class="bb-black-bg bb-mb-20 bb-about-box-2">
               <div class="bb-list-item bb-list-item-2">
                 <div class="bb-list-item-text-2">
@@ -219,8 +256,9 @@ html=f"""
                   <p><strong>Community:</strong> We host local artists, musicians, and events to support our neighborhood.</p>
                 </div>
                 <img src="img/about-2.png" alt="Our values" class="bb-list-item-img bb-list-item-img-big bb-img-right">
-              </div>
-            </div>
+              </div></div>
+          </div>
+          <div class="bb-copyright-bar">{A}copy; 2026 Brew {A}amp; Bean Coffee House. All rights reserved.</div>
           </div>
           <div id="special" class="bb-page-content">
             <h2 class="bb-section-title bb-black-bg">Chef Specials</h2>
@@ -271,9 +309,9 @@ html=f"""
                   <h3 class="bb-text-primary bb-special-item-title">Dark Mocha</h3>
                   <p class="bb-special-item-text">Rich dark chocolate ganache blended with our double espresso and steamed oat milk. Decadent and bold.</p>
                   <span class="bb-special-item-price">{D}5.75</span>
-                </div>
-              </div>
-            </div>
+                </div></div>
+          </div>
+          <div class="bb-copyright-bar">{A}copy; 2026 Brew {A}amp; Bean Coffee House. All rights reserved.</div>
           </div>
           <div id="contact" class="bb-page-content">
             <div class="bb-black-bg bb-contact-text-container">
@@ -304,16 +342,15 @@ html=f"""
                     Send Message <i class="fas fa-paper-plane"></i>
                   </button>
                 </div>
-              </form>
+                            </form>
             </div>
+          <div class="bb-copyright-bar">{A}copy; 2026 Brew {A}amp; Bean Coffee House. All rights reserved.</div>
           </div>
         </main>
         <footer class="bb-site-footer">
-          <p class="bb-black-bg bb-footer-text">{A}copy; 2024 Brew {A}amp; Bean Coffee House. All rights reserved.</p>
-        </footer>
-      </div>
-    </div>
-  </div>
+          <p class="bb-black-bg bb-footer-text">{A}copy; 2026 Brew {A}amp; Bean Coffee House. All rights reserved.</p>
+                </footer>
+      </div></div></div>
   <div class="bb-video-wrapper">
       <i id="bb-video-control-button" class="fas fa-pause"></i>
       <video autoplay muted loop id="bb-video">

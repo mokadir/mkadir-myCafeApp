@@ -379,6 +379,18 @@ textarea.bb-form-control { resize: vertical; min-height: 100px; }
 .bb-btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
 .bb-align-right { display: flex; justify-content: flex-end; }
 
+/* ---------- COPYRIGHT BAR ---------- */
+.bb-copyright-bar {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  padding: 12px 16px;
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.5px;
+}
+
 /* ---------- FOOTER ---------- */
 .bb-site-footer { padding: 0 48px 24px; }
 .bb-footer-text {
